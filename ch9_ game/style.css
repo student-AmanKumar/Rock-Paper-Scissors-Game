@@ -1,0 +1,339 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+}
+
+h1{
+    background: linear-gradient(135deg, #0f2d5a 0%, #1a4d7a 100%);
+    color:#ffffff;
+    height: 4rem;
+    line-height: 3rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    animation: classicSlideDown 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: sticky;
+    /* top: -35px; */
+    z-index: 100;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    border-bottom: 5px solid #1abbdb;
+    font-family: 'Segoe UI', sans-serif;
+    border-radius: 10px;
+}
+
+@keyframes classicSlideDown {
+    0% {
+        transform: translateY(-150%) scaleY(0.8);
+        opacity: 0;
+        letter-spacing: 10px;
+    }
+    50% {
+        transform: translateY(0px) scaleY(1.05);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(0px) scaleY(1);
+        opacity: 1;
+        letter-spacing: 3px;
+    }
+}
+.choice:hover{
+    transform: scale(1.15) translateY(-12px) rotate(5deg);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+    background: linear-gradient(135deg, rgba(0,212,255,0.25), rgba(0,212,255,0.15));
+    box-shadow: 
+        0 15px 35px rgba(0,212,255,0.4),
+        0 0 20px rgba(0,212,255,0.2),
+        inset 0 0 20px rgba(255,255,255,0.1);
+    border: 2px solid rgba(0,212,255,0.5);
+}
+
+
+.choice{
+    height: 165px;
+    width: 165px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: fadeIn 0.6s ease-out;
+    background: rgba(255,255,255,0.08);
+    border: 2px solid rgba(255,255,255,0.1);
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+img{
+     height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+
+}
+.choices{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.score-board{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 20px;
+    font-size: 1rem;
+    flex-wrap: wrap;
+    animation: slideUp 0.6s ease-out 0.3s both;
+    padding: 25px 40px;
+    border-radius: 20px;
+}
+
+.score {
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.08));
+    padding: 15px 25px;
+    border-radius: 15px;
+    /* backdrop-filter: blur(10px); */
+    /* border: 1px solid rgba(255,255,255,0.2); */
+    color: #0b0606;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+#user-score, #computer-score{
+    font-size: 4rem;
+    animation: pulse 0.6s ease-in-out;
+    color: #116374;
+    font-weight: 700;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.msg-container{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#msg{
+    background: linear-gradient(135deg, rgba(0,212,255,0.2), rgba(0,212,255,0.1));
+    color:white;
+    padding: 18px 35px;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    display: inline-block;
+    animation: classicFadeIn 1.2s ease-in-out;
+    max-width: 90%;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    letter-spacing: 0.5px;
+    border: 2px solid rgba(0,212,255,0.3);
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+@keyframes classicFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    40% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#rules{
+    margin-top: 30px;
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 10px 16px blue;
+    display: block;
+    margin: 30px auto 0;
+    top:5px;
+    animation: rotate 8s linear infinite;
+    /* background-color: #f5e6d3; */
+    
+
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* pause rotation when hovered */
+#rules:hover{
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+/* ===== BALLOON ANIMATION ===== */
+.balloon {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float 2s ease-in forwards;
+}
+
+@keyframes float {
+    0% {
+        opacity: 1;
+        transform: translateY(0) translateX(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100vh) translateX(100px) scale(0.5);
+    }
+}
+
+.congrats-animation {
+    animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet/Medium Screens */
+@media (max-width: 768px) {
+    h1{
+        padding: 6px 0;
+        font-size: 1.5rem;
+    }
+    
+    .choice{
+        height: 110px;
+        width: 110px;
+    }
+    
+    img{
+        height: 100px;
+        width: 100px;
+    }
+    
+    .choices{
+        gap: 12px;
+        margin: 8px 0;
+    }
+    
+    .score-board{
+        gap: 15px;
+        margin: 8px 0;
+        font-size: 1.1rem;
+        padding: 8px 15px;
+    }
+    
+    #user-score, #computer-score{
+        font-size: 2rem;
+    }
+    
+    #msg{
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+    
+    #rules{
+        height: 120px;
+        width: 120px;
+        margin: 5px auto;
+    }
+}
+
+/* Mobile Screens */
+@media (max-width: 480px) {
+    h1{
+        padding: 5px 0;
+        font-size: 1.3rem;
+    }
+    
+    .choice{
+        height: 100px;
+        width: 100px;
+    }
+    
+    img{
+        height: 90px;
+        width: 90px;
+    }
+    
+    .choices{
+        gap: 10px;
+        margin: 5px 0;
+    }
+    
+    .score-board{
+        gap: 12px;
+        margin: 5px 0;
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+    
+    .score{
+        padding: 6px 10px;
+        border-radius: 10px;
+    }
+    
+    #user-score, #computer-score{
+        font-size: 1.8rem;
+    }
+    
+    .msg-container{
+        margin: 5px 0;
+    }
+    
+    #msg{
+        font-size: 0.9rem;
+        padding: 8px 12px;
+        border-radius: 10px;
+    }
+    
+    #rules{
+        height: 100px;
+        width: 100px;
+        margin: 3px auto;
+    }
+}

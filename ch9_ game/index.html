@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<h1>Rock Paper Scissors Game</h1>
+<div class="choices">
+    <div class="choice" id="rock">
+        <img src="./img/rock.png" alt="Rock">
+    </div>
+    <div class="choice" id="paper">
+        <img src="./img/paper.png" alt="Paper">   
+    </div>
+    <div class="choice" id="scissors">
+        <img src="./img/scissors.png" alt="Scissors">
+    </div>
+</div>
+
+<!-- score display -->
+ <div class="score-board">
+    <div class="score">
+        <p id="user-score">0</p>
+        <p>You</p>
+    </div>
+        <div class="score">
+        <p id="computer-score">0</p>
+        <p>Computer</p>
+    </div>
+    </div>
+ 
+
+    <!-- msg -->
+     <div class="msg-container">
+        <p id="msg">Play Your Move!</p>
+     </div>
+
+     <img  id="rules" src="https://andygrunwald.com/images/posts/playing-rock-paper-scissors-with-500-people/rock-paper-scissors-game-rules.png" alt="rules" class="rules-img">
+    <script src="script.js"></script>
+</body>
+</html>
